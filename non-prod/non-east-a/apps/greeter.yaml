@@ -40,7 +40,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-greeter-feature-x
+  name: greeter-feature-x
   namespace: argocd
 spec:
   project: app-greeter
