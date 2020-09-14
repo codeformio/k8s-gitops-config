@@ -25,3 +25,6 @@ spec:
     #      # Optional Helm version to template with. If omitted it will fallback to look at the 'apiVersion' in Chart.yaml
     #      # and decide which Helm binary to use automatically. This field can be either 'v2' or 'v3'.
     #      version: v2
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: velero

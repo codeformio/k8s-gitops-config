@@ -8,6 +8,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: default

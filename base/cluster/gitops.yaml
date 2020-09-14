@@ -8,3 +8,6 @@ spec:
   source:
     repoURL: https://github.com/codeformio/k8s-cluster-config.git
     path: base/argocd
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default

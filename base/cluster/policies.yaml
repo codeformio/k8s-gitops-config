@@ -8,6 +8,9 @@ spec:
   source:
     repoURL: https://github.com/codeformio/k8s-cluster-config.git
     path: base/gatekeeper/system
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -18,3 +21,6 @@ spec:
   source:
     repoURL: https://github.com/codeformio/k8s-cluster-config.git
     path: base/gatekeeper/constraints
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
