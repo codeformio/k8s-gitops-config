@@ -1,0 +1,27 @@
+piVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backups
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/codeformio/k8s-cluster-config.git
+    path: base/velero
+    #    helm:
+    #      # Extra parameters to set (same as setting through values.yaml, but these take precedence)
+    #      parameters:
+    #      - name: "nginx-ingress.controller.service.annotations.external-dns\\.alpha\\.kubernetes\\.io/hostname"
+    #        value: mydomain.example.com
+    #
+    #      # Release name override (defaults to application name)
+    #      releaseName: guestbook
+    #
+    #      # Helm values files for overriding values in the helm chart
+    #      # The path is relative to the spec.source.path directory defined above
+    #      valueFiles:
+    #      - values-prod.yaml
+    #
+    #      # Optional Helm version to template with. If omitted it will fallback to look at the 'apiVersion' in Chart.yaml
+    #      # and decide which Helm binary to use automatically. This field can be either 'v2' or 'v3'.
+    #      version: v2

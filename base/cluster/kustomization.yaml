@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 - ./gitops.yaml
 - ./policies.yaml
+- ./backups.yaml
 
 namePrefix: cluster-
 
