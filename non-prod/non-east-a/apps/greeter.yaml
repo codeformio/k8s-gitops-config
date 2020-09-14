@@ -43,7 +43,7 @@ metadata:
   name: app-greeter-feature-x
   namespace: argocd
 spec:
-  project: greeter
+  project: app-greeter
   syncPolicy:
     automated:
       prune: true
