@@ -5,7 +5,7 @@ metadata:
   name: greeter-namespaces
   namespace: argocd
 spec:
-  project: greeter
+  project: default
   syncPolicy:
     automated:
       prune: true
@@ -24,7 +24,7 @@ metadata:
   name: greeter-staging
   namespace: argocd
 spec:
-  project: greeter
+  project: app-greeter
   syncPolicy:
     automated:
       prune: true
@@ -40,7 +40,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: greeter-feature-x
+  name: app-greeter-feature-x
   namespace: argocd
 spec:
   project: greeter
