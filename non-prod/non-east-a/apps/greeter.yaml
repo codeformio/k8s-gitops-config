@@ -1,0 +1,58 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: greeter-namespaces
+  namespace: argocd
+spec:
+  project: greeter
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  source:
+    repoURL: https://github.com/codeformio/k8s-cluster-config.git
+    path: non-prod/apps/greeter
+    targetRevision: non-prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: greeter-staging
+  namespace: argocd
+spec:
+  project: greeter
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  source:
+    repoURL: https://github.com/codeformio/k8s-greeter-app.git
+    path: deploy/staging
+    targetRevision: non-prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: greeter-staging
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: greeter-feature-x
+  namespace: argocd
+spec:
+  project: greeter
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  source:
+    repoURL: https://github.com/codeformio/k8s-greeter-app.git
+    path: deploy/feature-x
+    targetRevision: non-prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: greeter-feature-x
+
