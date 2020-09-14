@@ -6,6 +6,7 @@ resources:
 - ./root.yaml
 
 patches:
+- path: ./policy-constraints.yaml
 - path: ./patch-gitops-branch.yaml
   target:
     kind: Application
