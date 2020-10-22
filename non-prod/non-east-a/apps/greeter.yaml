@@ -10,6 +10,12 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  retry:
+    limit: 5
+    backoff:
+      duration: 5s
+      factor: 2
+      maxDuration: 3m
   source:
     repoURL: https://github.com/codeformio/k8s-cluster-config.git
     path: non-prod/apps/greeter
@@ -29,6 +35,12 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  retry:
+    limit: 5
+    backoff:
+      duration: 5s
+      factor: 2
+      maxDuration: 3m
   source:
     repoURL: https://github.com/codeformio/k8s-greeter-app.git
     path: deploy/staging
@@ -48,6 +60,12 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  retry:
+    limit: 5
+    backoff:
+      duration: 5s
+      factor: 2
+      maxDuration: 3m
   source:
     repoURL: https://github.com/codeformio/k8s-greeter-app.git
     path: deploy/feature-x
