@@ -11,6 +11,12 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: default
+  ignoreDifferences:
+  - group: admissionregistration.k8s.io
+    kind: ValidatingWebhookConfiguration
+    jsonPointers:
+    - /webhooks/0/clientConfig/caBundle
+    - /webhooks/1/clientConfig/caBundle
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
